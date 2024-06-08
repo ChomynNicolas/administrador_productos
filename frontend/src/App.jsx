@@ -1,15 +1,25 @@
 
 import './App.css';
-import { ProductManager } from './components/ProductForm/ProductManager';
+import { Main } from './components/Main/Main';
+import { createBrowserRouter,RouterProvider} from 'react-router-dom'
+import { ProductDetail } from './components/views/ProductDetail/ProductDetail';
 
-
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Main/>
+  },
+  {
+    path: '/:id',
+    element: <ProductDetail/>
+  }
+])
 
 function App() {
   return (
-    <>
-    <ProductManager/>
-    
-    </>
+    <div className='app'>
+    <RouterProvider router={router}/>
+    </div>
   );
 }
 

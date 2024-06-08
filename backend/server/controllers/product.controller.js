@@ -16,3 +16,9 @@ module.exports.createProduct = (req, res) => {
     .then((newProduct) => res.json(newProduct))
     .catch((err) => res.json(err));
 };
+
+module.exports.findProductByid = (req,res)=>{
+  Product.findById({_id:req.params.id})
+    .then(prod => res.json(prod))
+    .catch(err => res.json(err))
+} 

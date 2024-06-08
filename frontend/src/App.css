@@ -1,0 +1,19 @@
+.app{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+ul{
+list-style: none;
+}
+
+li{
+  margin-bottom: 10px;
+}
+
+.link{
+    outline: none;
+    text-decoration: none;
+    color: black;
+}

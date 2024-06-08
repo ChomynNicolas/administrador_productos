@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./productmanager.css";
 import axios from "axios";
 
-export const ProductManager = () => {
+export const ProductManager = ({products,setproducts}) => {
   const [title, settitle] = useState("");
   const [price, setprice] = useState("");
   const [description, setDescription] = useState("");
@@ -15,7 +15,7 @@ export const ProductManager = () => {
         price,
         description,
       })
-      .then((prod) => console.log(prod))
+      .then((prod) => setproducts([...products,prod]))
       .catch((err) => console.log(err));
     settitle("");
     setprice("");
