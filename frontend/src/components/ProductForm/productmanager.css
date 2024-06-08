@@ -1,0 +1,46 @@
+.container{
+  width: 300px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+
+}
+
+.title{
+  margin: 5px;
+}
+
+.input-container{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 5px;
+}
+
+
+.container-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn{
+  margin: 0 auto;
+  padding: 4px 25px;
+  color: #f5f5f5;
+  background-color: midnightblue;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover{
+  opacity: 0.8;
+}
+
+label{
+  font-size: 18px;
+}
