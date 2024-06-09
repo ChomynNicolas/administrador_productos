@@ -29,15 +29,15 @@ export const ProductList = ({products,setproducts}) => {
   return (
   <div>
     <h1>Todos los productos</h1>
-    <ul>
+    <ul className="ul-product">
     {loaded && products.map((product,index)=>{
       return (
-        <>
+        <div className="productos-container">
         <Link to={`/${product._id}`} key={index} className="link">
         <li>{product.title}</li>
         </Link>
-        <button onClick={()=>handleDeleteProduct(product._id)}>Eliminar</button>
-        </>
+        <button className="delete-btn" onClick={()=>handleDeleteProduct(product._id)}>Eliminar</button>
+        </div>
       );
       })}
     </ul>

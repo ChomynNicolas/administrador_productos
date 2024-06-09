@@ -37,9 +37,9 @@ export const ProductDetail = () => {
     <h3>{product.title}</h3>
     <p>{product.price}$</p>
     <p>{product.description}</p>
-    <div>
-      <Link to={`/${product._id}/edit`}>Editar</Link>
-      <button onClick={handleDeleteProduct}>Eliminar</button>
+    <div className="contenedor-editDelet">
+      <Link className="editar-btn" to={`/${product._id}/edit`}>Editar</Link>
+      <button className="delete-btn" onClick={handleDeleteProduct}>Eliminar</button>
     </div>
   </div>
 

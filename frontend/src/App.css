@@ -17,3 +17,62 @@ li{
     text-decoration: none;
     color: black;
 }
+
+.ul-product{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.productos-container{
+  margin: 5px;
+  padding: 10px 30px;
+  background-color: #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 80px;
+  justify-content: space-evenly;
+  
+
+}
+
+button{
+  cursor: pointer;
+}
+
+
+.editar-btn{
+  padding: 5px 10px;
+  background-color: rgb(0, 0, 125);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+
+.delete-btn{
+  padding: 5px 10px;
+  background-color: rgb(111, 15, 15);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font: inherit;
+  font-size: 20px;
+  
+  border: none;
+  
+
+}
+
+.contenedor-editDelet{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
