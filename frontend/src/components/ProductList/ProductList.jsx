@@ -17,7 +17,14 @@ export const ProductList = ({products,setproducts}) => {
   
   }, [setproducts,products])
   
-
+  const handleDeleteProduct = (id)=>{
+    axios.delete(`http://localhost:3001/api/${id}`)
+      .then(res => console.log(res));
+    const productFilter = products.filter((product)=> product._id !== id)
+    setproducts(productFilter);
+    setloaded(true);
+    
+  }
 
   return (
   <div>
@@ -25,9 +32,12 @@ export const ProductList = ({products,setproducts}) => {
     <ul>
     {loaded && products.map((product,index)=>{
       return (
+        <>
         <Link to={`/${product._id}`} key={index} className="link">
         <li>{product.title}</li>
         </Link>
+        <button onClick={()=>handleDeleteProduct(product._id)}>Eliminar</button>
+        </>
       );
       })}
     </ul>

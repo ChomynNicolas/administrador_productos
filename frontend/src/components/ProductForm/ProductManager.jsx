@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "./productmanager.css";
 import axios from "axios";
+import {FormD} from "../ProductForm/components/Form/FormD";
 
-export const ProductManager = ({products,setproducts}) => {
+export const ProductManager = ({ products, setproducts }) => {
   const [title, settitle] = useState("");
   const [price, setprice] = useState("");
   const [description, setDescription] = useState("");
@@ -15,7 +16,7 @@ export const ProductManager = ({products,setproducts}) => {
         price,
         description,
       })
-      .then((prod) => setproducts([...products,prod]))
+      .then((prod) => setproducts([...products, prod]))
       .catch((err) => console.log(err));
     settitle("");
     setprice("");
@@ -23,44 +24,14 @@ export const ProductManager = ({products,setproducts}) => {
   };
 
   return (
-    <form className="container" onSubmit={handleSubmit}>
-      <h1 className="title">Product Manager</h1>
-      <div className="container-info">
-        <label>Title</label>
-        <div className="input-container">
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => settitle(e.target.value)}
-          />
-        </div>
-      </div>
-
-      <div className="container-info">
-        <label>Price</label>
-        <div className="input-container">
-          <input
-            type="number"
-            value={price}
-            onChange={(e) => setprice(e.target.value)}
-          />
-        </div>
-      </div>
-
-      <div className="container-info">
-        <label>Descripcion</label>
-        <div className="input-container">
-          <input type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            />
-            
-        </div>
-      </div>
-      <button className="btn">Crear</button>
-    </form>
+    <FormD
+      handleSubmit={handleSubmit}
+      title={title}
+      settitle={settitle}
+      price={price}
+      setprice={setprice}
+      description={description}
+      setDescription={setDescription}
+    />
   );
 };
-
-
-

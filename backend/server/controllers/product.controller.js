@@ -22,3 +22,16 @@ module.exports.findProductByid = (req,res)=>{
     .then(prod => res.json(prod))
     .catch(err => res.json(err))
 } 
+
+
+module.exports.findAndUpdateById = (req,res)=>{
+  Product.findByIdAndUpdate({_id: req.params.id},req.body,{new:true})
+    .then(newProd => res.json(newProd))
+    .catch(err => res.json(err))
+}
+
+module.exports.findAndDeleteById = (req,res)=>{
+  Product.findOneAndDelete({_id:req.params.id})
+    .then(concl => res.json(concl))
+    .catch(err => res.json(err))
+}
