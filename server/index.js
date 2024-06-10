@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const port = 3001;
 const cors = require("cors");
@@ -6,7 +7,13 @@ const app = express();
 
 require("./server/config/mongoose.config");
 
-app.use(express.json(), express.urlencoded({ extended: true }), cors());
+
+
+app.use(express.json(), express.urlencoded({ extended: true }), cors({
+  origin: ["https://deploy-mern-1whq.vercel.app"],
+  methods: ["POST","GET","PUT","DELETE"],
+  credentials: true
+}));
 
 const ProductRoutes = require("./server/routes/product.routes");
 ProductRoutes(app);
