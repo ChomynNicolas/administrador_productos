@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { DeleteButton } from "./components/DeleteButton/DeleteButton";
 
 
 export const ProductList = ({products,setproducts}) => {
@@ -18,11 +19,10 @@ export const ProductList = ({products,setproducts}) => {
   }, [setproducts,products])
   
   const handleDeleteProduct = (id)=>{
-    axios.delete(`http://localhost:3001/api/${id}`)
-      .then(res => console.log(res));
+    
     const productFilter = products.filter((product)=> product._id !== id)
     setproducts(productFilter);
-    setloaded(true);
+    
     
   }
 
@@ -36,7 +36,7 @@ export const ProductList = ({products,setproducts}) => {
         <Link to={`/${product._id}`} key={index} className="link">
         <li>{product.title}</li>
         </Link>
-        <button className="delete-btn" onClick={()=>handleDeleteProduct(product._id)}>Eliminar</button>
+        <DeleteButton  id={product._id} callbackSuccess={()=>handleDeleteProduct(product._id)}/>
         </div>
       );
       })}

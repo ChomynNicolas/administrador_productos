@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { DeleteButton } from "../../ProductList/components/DeleteButton/DeleteButton";
 
 
 export const ProductDetail = () => {
@@ -18,8 +19,7 @@ export const ProductDetail = () => {
   }, [id])
 
   const handleDeleteProduct = ()=>{
-    axios.delete(`http://localhost:3001/api/${id}`)
-      .then(res => console.log(res));
+    
     navigate('/');
   }
 
@@ -39,7 +39,7 @@ export const ProductDetail = () => {
     <p>{product.description}</p>
     <div className="contenedor-editDelet">
       <Link className="editar-btn" to={`/${product._id}/edit`}>Editar</Link>
-      <button className="delete-btn" onClick={handleDeleteProduct}>Eliminar</button>
+      <DeleteButton id={product._id} callbackSuccess={handleDeleteProduct}/>
     </div>
   </div>
 
