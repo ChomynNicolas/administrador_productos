@@ -9,11 +9,7 @@ require("./config/mongoose.config");
 
 
 
-app.use(express.json(), express.urlencoded({ extended: true }), cors({
-  origin: ["https://deploy-mern-1whq.vercel.app"],
-  methods: ["POST","GET","PUT","DELETE"],
-  credentials: true
-}));
+app.use(express.json(), express.urlencoded({ extended: true }), cors());
 
 const ProductRoutes = require("./routes/product.routes");
 ProductRoutes(app);
