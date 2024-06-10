@@ -5,7 +5,7 @@ const cors = require("cors");
 
 const app = express();
 
-require("./server/config/mongoose.config");
+require("./config/mongoose.config");
 
 
 
@@ -15,7 +15,7 @@ app.use(express.json(), express.urlencoded({ extended: true }), cors({
   credentials: true
 }));
 
-const ProductRoutes = require("./server/routes/product.routes");
+const ProductRoutes = require("./routes/product.routes");
 ProductRoutes(app);
 
 app.listen(port, () => {
