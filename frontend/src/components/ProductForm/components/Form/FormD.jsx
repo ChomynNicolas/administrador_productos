@@ -4,7 +4,7 @@
 
 
 
-export const FormD = ({handleSubmit,title,settitle,price,setprice,description,setDescription}) => {
+export const FormD = ({handleSubmit,title,settitle,price,setprice,description,setDescription,accion="Crear"}) => {
   return (
     <form className="container" onSubmit={handleSubmit}>
       <h1 className="title">Product Manager</h1>
@@ -40,7 +40,7 @@ export const FormD = ({handleSubmit,title,settitle,price,setprice,description,se
           />
         </div>
       </div>
-      <button className="btn">Crear</button>
+      <button className="btn">{accion}</button>
     </form>
   );
 };
