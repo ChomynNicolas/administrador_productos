@@ -3,7 +3,7 @@ import axios from "axios";
 export const DeleteButton = ({id, callbackSuccess}) => {
 
   const deletePerson =()=>{
-    axios.delete(`http://localhost:3001/api/${id}`)
+    axios.delete(`https://administrador-productos-api.vercel.app/api/${id}`)
         .then(res => callbackSuccess());
   }  
 

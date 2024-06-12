@@ -8,7 +8,7 @@ export const ProductList = ({products,setproducts}) => {
   
   const [loaded, setloaded] = useState(false)
   useEffect(() => {
-  axios.get('http://localhost:3001/api')
+  axios.get('https://administrador-productos-api.vercel.app/api')
   .then(res => {
     setproducts(res.data);
     setloaded(true);
@@ -45,3 +45,6 @@ export const ProductList = ({products,setproducts}) => {
   </div>
   );
 };
+
+
+

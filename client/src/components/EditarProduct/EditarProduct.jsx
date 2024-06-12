@@ -9,7 +9,7 @@ export const EditarProduct = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/${id}`)
+      .get(`https://administrador-productos-api.vercel.app/api/${id}`)
       .then((res) => setProducto(res.data));
   }, [id]);
 
@@ -20,7 +20,7 @@ export const EditarProduct = () => {
   const handleEditSubmit = (event) => {
     event.preventDefault();
     const { title, price, descripcion } = producto;
-    axios.put(`http://localhost:3001/api/${id}/edit`, {
+    axios.put(`https://administrador-productos-api.vercel.app/api/${id}/edit`, {
       title,
       price,
       descripcion,
