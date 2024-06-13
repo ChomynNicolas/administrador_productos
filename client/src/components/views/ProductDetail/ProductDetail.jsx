@@ -11,7 +11,7 @@ export const ProductDetail = () => {
   const navigate = useNavigate();
   console.log(id)
   useEffect(() => {
-    axios.get(`https://administrador-productos-api.vercel.app/api/${id}`)
+    axios.get(`https://administrador-productos-api-mf6c.onrender.com/api/${id}`)
       .then(res => setproduct(res.data));
 
   

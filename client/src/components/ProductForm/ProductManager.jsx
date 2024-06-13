@@ -11,7 +11,7 @@ export const ProductManager = ({ products, setproducts }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("https://administrador-productos-api.vercel.app/api/createproduct", {
+      .post("https://administrador-productos-api-mf6c.onrender.com/api/createproduct", {
         title,
         price,
         description,
