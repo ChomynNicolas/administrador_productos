@@ -8,7 +8,7 @@ export const ProductList = ({products,setproducts}) => {
   
   const [loaded, setloaded] = useState(false)
   useEffect(() => {
-  axios.get('hhttps://administrador-productos-api-mf6c.onrender.com/api')
+  axios.get('https://administrador-productos-api-mf6c.onrender.com/api')
   .then(res => {
     setproducts(res.data);
     setloaded(true);
